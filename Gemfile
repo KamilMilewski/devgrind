@@ -8,7 +8,7 @@ end
 
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.2'
-gem 'hamlit', '~> 2.0.0'
+gem 'hamlit'
 gem 'hamlit-rails'
 gem 'html2haml'
 gem 'jbuilder', '~> 2.5'

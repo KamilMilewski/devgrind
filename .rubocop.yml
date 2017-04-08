@@ -16,3 +16,9 @@ AllCops:
     - 'spec/spec_helper.rb'
 Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/features/*.rb'

@@ -6,15 +6,8 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-# Devise helpers for contoller specs
-RSpec.configure do |config|
-  config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include Devise::Test::ControllerHelpers, type: :view
-end
-# Devise helpers for integration specs
-RSpec.configure do |config|
-  config.include Devise::Test::IntegrationHelpers, type: :feature
-end
+require 'capybara/rspec'
+require 'capybara-screenshot/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -34,6 +27,10 @@ end
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
+
+Capybara.javascript_driver = :webkit
+# For capybara screenshoots to look preety(have any asset)
+Capybara.asset_host = 'http://localhost:3000'
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -63,4 +60,14 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # For factory_girl shorthand 'create' syntax:
+  # 'create :user' instead of 'FactoryGirl.create(:user)'
+  config.include FactoryGirl::Syntax::Methods
+
+  # Devise helpers for contoller specs
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+  # Devise helpers for integration specs
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 end

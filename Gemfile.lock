@@ -272,7 +272,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   factory_girl_rails
-  hamlit (~> 2.0.0)
+  hamlit
   hamlit-rails
   html2haml
   jbuilder (~> 2.5)
