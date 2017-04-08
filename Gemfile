@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'devise'
 
 group :development, :test do
   gem 'better_errors'
