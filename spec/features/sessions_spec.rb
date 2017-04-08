@@ -10,7 +10,7 @@ feature 'User visits home page', js: true do
   context 'as a guest' do
     before { visit root_path }
 
-    scenario 'logs in successfully' do
+    it 'logs in successfully' do
       expect(page).to have_content 'Log in'
       fill_in 'Email', with: 'factory@girl.user'
       fill_in 'Password', with: 'password'
@@ -18,7 +18,7 @@ feature 'User visits home page', js: true do
       expect(page).to have_link 'Log out'
     end
 
-    scenario 'tries to logs in and fails miserably' do
+    it 'tries to logs in and fails miserably' do
       fill_in 'Email', with: 'no such email in db'
       fill_in 'Password', with: 'som wrong password'
       click_button 'Log in'
@@ -33,7 +33,7 @@ feature 'User visits home page', js: true do
       visit root_path
     end
 
-    scenario 'logs out successfully' do
+    it 'logs out successfully' do
       click_link 'Log out'
       expect(page).to_not have_link 'Log out'
       expect(page).to have_button 'Log in'
