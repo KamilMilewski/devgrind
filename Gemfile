@@ -7,6 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap-sass'
+gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'hamlit'
 gem 'hamlit-rails'
@@ -15,7 +16,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'puma', '~> 3.0'
 gem 'rails', '5.1.0.rc1'
-gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'

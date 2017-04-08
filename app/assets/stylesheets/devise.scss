@@ -1,0 +1,13 @@
+.login-panel {
+  @extend .col-lg-4, .col-lg-offset-4;
+  h2 {
+    text-align: center;
+  }
+  input[type=submit] {
+    @extend .btn-block;
+  }
+
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding-bottom: 10px;
+}
